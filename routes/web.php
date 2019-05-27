@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
 });
-
+*/
 /*課題３
 Route::get('XXX', 'Admin\AAAController@bbb');
 */
@@ -39,6 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth');
      Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');
      Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
+     Route::get('/', 'NewsController@index');
 });
 
 
